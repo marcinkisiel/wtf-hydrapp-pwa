@@ -17,6 +17,7 @@ body {
 	background-color: $background-blue;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 500;
+	height: 100vh;
 }
 
 .button__add-glass {
@@ -64,7 +65,7 @@ body {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
+	height: 100%;
 	justify-content: center;
 	margin: 0 auto;
 	width: 215px;
