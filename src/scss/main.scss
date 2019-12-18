@@ -43,8 +43,14 @@ body {
 	margin-bottom: 48px;
 	position: relative;
 
+	&__basic-blue {
+		bottom: 20px;
+		position: absolute;
+		right: 25px;
+	}
+
 	&__counter {
-		bottom: 70px;
+		bottom: 50px;
 		font-size: 112px;
 		font-weight: 500;
 		left: 75px;
