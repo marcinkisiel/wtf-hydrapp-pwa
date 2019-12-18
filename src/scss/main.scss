@@ -1,6 +1,8 @@
 @import '_normalize';
 @import '_variables';
 
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap&subset=latin-ext');
+
 html {
 	box-sizing: border-box;
 }
@@ -13,4 +15,51 @@ html {
 
 body {
 	background-color: $background-blue;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+}
+
+.button__add-glass {
+	background-color: #fff;
+	border: none;
+	border-radius: 4px;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	flex-shrink: 0;
+	font-size: 18px;
+	font-weight: 500;
+	height: 47px;
+	margin-bottom: 37px;
+	width: 216px;
+}
+
+.button__subtract-glass {
+	background-color: $background-blue;
+	border: none;
+	color: #f5e5e7;
+	font-weight: 500;
+}
+
+.glass {
+	margin-bottom: 48px;
+	position: relative;
+
+	&__counter {
+		bottom: 70px;
+		font-size: 112px;
+		font-weight: 500;
+		left: 75px;
+		margin: 0;
+		position: absolute;
+		text-align: center;
+	}
+}
+
+.main {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	justify-content: center;
+	margin: 0 auto;
+	width: 215px;
 }
