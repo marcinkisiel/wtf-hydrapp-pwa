@@ -40,7 +40,7 @@ buttonAdd.addEventListener('click', addGlass);
 buttonSubtract.addEventListener('click', subtractGlass);
 
 function addGlass() {
-	if (actualGlassNumber < 9) {
+	if (actualGlassNumber < 10) {
 		actualGlassNumber++;
 		glassCounter.innerHTML = actualGlassNumber;
 		localStorage.setItem(keyDate, actualGlassNumber);
