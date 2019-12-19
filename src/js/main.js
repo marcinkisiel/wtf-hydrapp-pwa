@@ -19,16 +19,23 @@ if ('serviceWorker' in navigator) {
 
 // place your code below
 
-const key = new Date().toISOString().slice(0, 10);
-localStorage.setItem('currentDate', key);
-console.log(key);
-
 const buttonAdd = document.querySelector('.button_add-glass--js');
 const buttonSubtract = document.querySelector('.button_subtract-glass--js');
 const glassCounter = document.querySelector('.glass__counter--js');
-let actualGlassNumber = localStorage.getItem('actualGlassNumber');
+
+const lastDate = localStorage.getItem('currentDate');
+
+const currentDate = new Date().toISOString().slice(0, 10);
+localStorage.setItem('currentDate', currentDate);
+
+let actualGlassNumber;
+
+if (lastDate == currentDate) {
+	actualGlassNumber = localStorage.getItem('actualGlassNumber');
+} else {
+	actualGlassNumber = 0;
+}
 glassCounter.innerHTML = actualGlassNumber;
-console.log(actualGlassNumber);
 
 buttonAdd.addEventListener('click', addGlass);
 buttonSubtract.addEventListener('click', subtractGlass);
