@@ -61,8 +61,10 @@ function subtractGlass() {
 		glassCounter.innerHTML = actualGlassNumber;
 		localStorage.setItem(keyDate, actualGlassNumber);
 		glassBlueHeight = parseInt(glassBasicBlue.getAttribute('height'));
-		glassBlueHeight -= 40;
-		glassBlueHeight = glassBlueHeight.toString();
-		glassBasicBlue.setAttribute('height', glassBlueHeight);
+		if (glassBlueHeight > 40) {
+			glassBlueHeight -= 40;
+			glassBlueHeight = glassBlueHeight.toString();
+			glassBasicBlue.setAttribute('height', glassBlueHeight);
+		}
 	}
 }
