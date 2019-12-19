@@ -23,17 +23,16 @@ const buttonAdd = document.querySelector('.button_add-glass--js');
 const buttonSubtract = document.querySelector('.button_subtract-glass--js');
 const glassCounter = document.querySelector('.glass__counter--js');
 
-const lastDate = localStorage.getItem('currentDate');
+const keyDate = new Date().toISOString().slice(0, 10);
 
-const currentDate = new Date().toISOString().slice(0, 10);
-localStorage.setItem('currentDate', currentDate);
+const checkDate = localStorage.getItem(keyDate);
 
 let actualGlassNumber;
 
-if (lastDate == currentDate) {
-	actualGlassNumber = localStorage.getItem('actualGlassNumber');
-} else {
+if (checkDate == null) {
 	actualGlassNumber = 0;
+} else {
+	actualGlassNumber = localStorage.getItem(keyDate);
 }
 glassCounter.innerHTML = actualGlassNumber;
 
@@ -44,7 +43,7 @@ function addGlass() {
 	if (actualGlassNumber < 9) {
 		actualGlassNumber++;
 		glassCounter.innerHTML = actualGlassNumber;
-		localStorage.setItem('actualGlassNumber', actualGlassNumber);
+		localStorage.setItem(keyDate, actualGlassNumber);
 	}
 }
 
@@ -52,6 +51,6 @@ function subtractGlass() {
 	if (actualGlassNumber > 0) {
 		actualGlassNumber--;
 		glassCounter.innerHTML = actualGlassNumber;
-		localStorage.setItem('actualGlassNumber', actualGlassNumber);
+		localStorage.setItem(keyDate, actualGlassNumber);
 	}
 }
