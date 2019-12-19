@@ -19,10 +19,15 @@ if ('serviceWorker' in navigator) {
 
 // place your code below
 
+const key = new Date().toISOString().slice(0, 10);
+localStorage.setItem('currentDate', key);
+console.log(key);
+
 const buttonAdd = document.querySelector('.button_add-glass--js');
 const buttonSubtract = document.querySelector('.button_subtract-glass--js');
 const glassCounter = document.querySelector('.glass__counter--js');
-let actualGlassNumber = glassCounter.innerHTML;
+let actualGlassNumber = localStorage.getItem('actualGlassNumber');
+glassCounter.innerHTML = actualGlassNumber;
 console.log(actualGlassNumber);
 
 buttonAdd.addEventListener('click', addGlass);
@@ -32,6 +37,7 @@ function addGlass() {
 	if (actualGlassNumber < 9) {
 		actualGlassNumber++;
 		glassCounter.innerHTML = actualGlassNumber;
+		localStorage.setItem('actualGlassNumber', actualGlassNumber);
 	}
 }
 
@@ -39,5 +45,6 @@ function subtractGlass() {
 	if (actualGlassNumber > 0) {
 		actualGlassNumber--;
 		glassCounter.innerHTML = actualGlassNumber;
+		localStorage.setItem('actualGlassNumber', actualGlassNumber);
 	}
 }
