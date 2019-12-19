@@ -22,12 +22,16 @@ if ('serviceWorker' in navigator) {
 const buttonAdd = document.querySelector('.button_add-glass--js');
 const buttonSubtract = document.querySelector('.button_subtract-glass--js');
 const glassCounter = document.querySelector('.glass__counter--js');
+const glassBasicBlue = document.querySelector('.glass__basic-blue--js');
+
+// glassBasicBlue.setAttribute('height', '0');
 
 const keyDate = new Date().toISOString().slice(0, 10);
 
 const checkDate = localStorage.getItem(keyDate);
 
 let actualGlassNumber;
+let glassBlueHeight;
 
 if (checkDate == null) {
 	actualGlassNumber = 0;
@@ -44,6 +48,10 @@ function addGlass() {
 		actualGlassNumber++;
 		glassCounter.innerHTML = actualGlassNumber;
 		localStorage.setItem(keyDate, actualGlassNumber);
+		glassBlueHeight = parseInt(glassBasicBlue.getAttribute('height'));
+		glassBlueHeight += 40;
+		glassBlueHeight = glassBlueHeight.toString();
+		glassBasicBlue.setAttribute('height', glassBlueHeight);
 	}
 }
 
@@ -52,5 +60,9 @@ function subtractGlass() {
 		actualGlassNumber--;
 		glassCounter.innerHTML = actualGlassNumber;
 		localStorage.setItem(keyDate, actualGlassNumber);
+		glassBlueHeight = parseInt(glassBasicBlue.getAttribute('height'));
+		glassBlueHeight -= 40;
+		glassBlueHeight = glassBlueHeight.toString();
+		glassBasicBlue.setAttribute('height', glassBlueHeight);
 	}
 }
