@@ -20,6 +20,13 @@ body {
 	height: 100vh;
 }
 
+.button {
+	transition: transform 0.2s;
+	&:hover {
+		transform: scale(1.03);
+	}
+}
+
 .button__add-glass {
 	background-color: #fff;
 	border: none;
