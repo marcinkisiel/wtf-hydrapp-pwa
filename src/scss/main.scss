@@ -66,6 +66,10 @@ body {
 		position: absolute;
 		text-align: center;
 		width: 100%;
+
+		&--red {
+			color: #c52c2c;
+		}
 	}
 }
 

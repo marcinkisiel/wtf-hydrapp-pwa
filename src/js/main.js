@@ -53,14 +53,18 @@ buttonAdd.addEventListener('click', addGlass);
 buttonSubtract.addEventListener('click', subtractGlass);
 
 function addGlass() {
-	if (actualGlassNumber < 10) {
+	if (actualGlassNumber < 20) {
 		actualGlassNumber++;
 		glassCounter.innerHTML = actualGlassNumber;
 		localStorage.setItem(keyDate, actualGlassNumber);
-		glassBlueHeight = parseInt(glassBasicBlue.getAttribute('height'));
-		glassBlueHeight += 40;
-		glassBlueHeight = glassBlueHeight.toString();
-		glassBasicBlue.setAttribute('height', glassBlueHeight);
+		if (actualGlassNumber < 11) {
+			glassBlueHeight = parseInt(glassBasicBlue.getAttribute('height'));
+			glassBlueHeight += 40;
+			glassBlueHeight = glassBlueHeight.toString();
+			glassBasicBlue.setAttribute('height', glassBlueHeight);
+		} else {
+			glassCounter.classList.add('glass__counter--red');
+		}
 	}
 }
 
@@ -69,11 +73,14 @@ function subtractGlass() {
 		actualGlassNumber--;
 		glassCounter.innerHTML = actualGlassNumber;
 		localStorage.setItem(keyDate, actualGlassNumber);
-		glassBlueHeight = parseInt(glassBasicBlue.getAttribute('height'));
-		if (glassBlueHeight > 40) {
-			glassBlueHeight -= 40;
-			glassBlueHeight = glassBlueHeight.toString();
-			glassBasicBlue.setAttribute('height', glassBlueHeight);
+		if (actualGlassNumber < 10) {
+			glassBlueHeight = parseInt(glassBasicBlue.getAttribute('height'));
+			glassCounter.classList.remove('glass__counter--red');
+			if (glassBlueHeight > 40) {
+				glassBlueHeight -= 40;
+				glassBlueHeight = glassBlueHeight.toString();
+				glassBasicBlue.setAttribute('height', glassBlueHeight);
+			}
 		}
 	}
 }
