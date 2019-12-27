@@ -57,6 +57,7 @@ function addGlass() {
 		actualGlassNumber++;
 		glassCounter.innerHTML = actualGlassNumber;
 		localStorage.setItem(keyDate, actualGlassNumber);
+		console.log('keyDate ' + typeof keyDate);
 		if (actualGlassNumber < 11) {
 			glassBlueHeight = parseInt(glassBasicBlue.getAttribute('height'));
 			glassBlueHeight += 40;
@@ -83,4 +84,21 @@ function subtractGlass() {
 			}
 		}
 	}
+}
+
+const rawDate = new Date();
+let currentYear = rawDate.getFullYear();
+let currentMonth = rawDate.getMonth() + 1;
+let currentDay = rawDate.getDate();
+
+let logDay = currentDay - 1;
+
+for (let i = 0; i < 7; i++) {
+	let storDate = currentYear + '-' + currentMonth + '-' + logDay;
+	console.log('storDate ' + storDate);
+	// console.log('storDate ' + typeof storDate);
+	let storValue = localStorage.getItem(storDate);
+	console.log('storValue ' + storValue);
+	// console.log('storValue ' + typeof storValue);
+	logDay--;
 }
