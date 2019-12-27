@@ -23,6 +23,8 @@ const buttonAdd = document.querySelector('.button_add-glass--js');
 const buttonSubtract = document.querySelector('.button_subtract-glass--js');
 const glassCounter = document.querySelector('.glass__counter--js');
 const glassBasicBlue = document.querySelector('.glass__basic-blue--js');
+const historyList = document.querySelector('.history__list--js');
+const historyAverageGlassNumber = document.querySelector('.history__glass-count--js');
 
 // glassBasicBlue.setAttribute('height', '0');
 
@@ -92,13 +94,26 @@ let currentMonth = rawDate.getMonth() + 1;
 let currentDay = rawDate.getDate();
 
 let logDay = currentDay - 1;
+let totalGlassNumber = 0;
 
 for (let i = 0; i < 7; i++) {
 	let storDate = currentYear + '-' + currentMonth + '-' + logDay;
-	console.log('storDate ' + storDate);
-	// console.log('storDate ' + typeof storDate);
 	let storValue = localStorage.getItem(storDate);
-	console.log('storValue ' + storValue);
-	// console.log('storValue ' + typeof storValue);
+	if (storValue == null) {
+		storValue = 0;
+	}
+	if (storValue == 1) {
+		historyList.innerHTML += `<li>${storDate}: ${storValue} szklanka</li>`;
+	} else if (storValue > 1 && storValue < 5) {
+		historyList.innerHTML += `<li>${storDate}: ${storValue} szklanki</li>`;
+	} else {
+		historyList.innerHTML += `<li>${storDate}: ${storValue} szklanek</li>`;
+	}
+
+	totalGlassNumber += parseInt(storValue);
 	logDay--;
 }
+
+console.log(totalGlassNumber);
+let averageGlassNumber = Math.round(totalGlassNumber / 7);
+historyAverageGlassNumber.innerHTML = averageGlassNumber;

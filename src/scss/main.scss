@@ -17,7 +17,7 @@ body {
 	background-color: $background-blue;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 500;
-	height: 100vh;
+	min-height: 100vh;
 }
 
 .button {
@@ -73,12 +73,27 @@ body {
 	}
 }
 
+.history {
+	color: #f5e5e7;
+	margin-top: 20px;
+
+	&__heading {
+		text-align: center;
+	}
+
+	&__list {
+		list-style-type: none;
+		margin-bottom: 0;
+		padding: 0 20px;
+	}
+}
+
 .main {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
 	justify-content: center;
-	margin: 0 auto;
-	width: 215px;
+	margin: 40px auto;
+	width: 220px;
 }
