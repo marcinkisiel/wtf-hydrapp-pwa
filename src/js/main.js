@@ -42,6 +42,11 @@ if (checkDate == null) {
 }
 glassCounter.innerHTML = actualGlassNumber;
 
+if (actualGlassNumber > 10) {
+	glassCounter.classList.add('glass__counter--red');
+	glassBasicBlue.setAttribute('height', '401');
+}
+
 function setGlassBlueHeight(glasses) {
 	glasses = parseInt(glasses);
 	glassBlueHeight = glasses * 40 + 1;
@@ -59,7 +64,6 @@ function addGlass() {
 		actualGlassNumber++;
 		glassCounter.innerHTML = actualGlassNumber;
 		localStorage.setItem(keyDate, actualGlassNumber);
-		console.log('keyDate ' + typeof keyDate);
 		if (actualGlassNumber < 11) {
 			glassBlueHeight = parseInt(glassBasicBlue.getAttribute('height'));
 			glassBlueHeight += 40;
@@ -114,6 +118,5 @@ for (let i = 0; i < 7; i++) {
 	logDay--;
 }
 
-console.log(totalGlassNumber);
 let averageGlassNumber = Math.round(totalGlassNumber / 7);
 historyAverageGlassNumber.innerHTML = averageGlassNumber;
