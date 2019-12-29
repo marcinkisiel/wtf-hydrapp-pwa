@@ -26,8 +26,6 @@ const glassBasicBlue = document.querySelector('.glass__basic-blue--js');
 const historyList = document.querySelector('.history__list--js');
 const historyAverageGlassNumber = document.querySelector('.history__glass-count--js');
 
-// glassBasicBlue.setAttribute('height', '0');
-
 const keyDate = new Date().toISOString().slice(0, 10);
 
 const checkDate = localStorage.getItem(keyDate);
@@ -42,16 +40,16 @@ if (checkDate == null) {
 }
 glassCounter.innerHTML = actualGlassNumber;
 
-if (actualGlassNumber > 10) {
-	glassCounter.classList.add('glass__counter--red');
-	glassBasicBlue.setAttribute('height', '401');
-}
-
 function setGlassBlueHeight(glasses) {
-	glasses = parseInt(glasses);
-	glassBlueHeight = glasses * 40 + 1;
-	glassBlueHeight = glassBlueHeight.toString();
-	glassBasicBlue.setAttribute('height', glassBlueHeight);
+	if (actualGlassNumber > 10) {
+		glassCounter.classList.add('glass__counter--red');
+		glassBasicBlue.setAttribute('height', '401');
+	} else {
+		glasses = parseInt(glasses);
+		glassBlueHeight = glasses * 40 + 1;
+		glassBlueHeight = glassBlueHeight.toString();
+		glassBasicBlue.setAttribute('height', glassBlueHeight);
+	}
 }
 
 setGlassBlueHeight(actualGlassNumber);
