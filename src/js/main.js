@@ -91,30 +91,35 @@ function subtractGlass() {
 }
 
 const rawDate = new Date();
-let currentYear = rawDate.getFullYear();
-let currentMonth = rawDate.getMonth() + 1;
-let currentDay = rawDate.getDate();
+const rawDateMiliseconds = rawDate.getTime();
+const oneDayMiliseconds = 1000 * 60 * 60 * 24;
+let yesterdayMiliseconds = rawDateMiliseconds - oneDayMiliseconds;
+let yesterdayDate = new Date(yesterdayMiliseconds);
+let year = yesterdayDate.getFullYear();
+let month = yesterdayDate.getMonth() + 1;
+let day = yesterdayDate.getDate();
+let storDate = year + '-' + month + '-' + day;
+console.log('storDate ' + storDate);
 
-let logDay = currentDay - 1;
 let totalGlassNumber = 0;
 
-for (let i = 0; i < 7; i++) {
-	let storDate = currentYear + '-' + currentMonth + '-' + logDay;
-	let storValue = localStorage.getItem(storDate);
-	if (storValue == null) {
-		storValue = 0;
-	}
-	if (storValue == 1) {
-		historyList.innerHTML += `<li>${storDate}: ${storValue} szklanka</li>`;
-	} else if (storValue > 1 && storValue < 5) {
-		historyList.innerHTML += `<li>${storDate}: ${storValue} szklanki</li>`;
-	} else {
-		historyList.innerHTML += `<li>${storDate}: ${storValue} szklanek</li>`;
-	}
+// for (let i = 0; i < 7; i++) {
+// 	let storDate = currentYear + '-' + currentMonth + '-' + logDay;
+// 	let storValue = localStorage.getItem(storDate);
+// 	if (storValue == null) {
+// 		storValue = 0;
+// 	}
+// 	if (storValue == 1) {
+// 		historyList.innerHTML += `<li>${storDate}: ${storValue} szklanka</li>`;
+// 	} else if (storValue > 1 && storValue < 5) {
+// 		historyList.innerHTML += `<li>${storDate}: ${storValue} szklanki</li>`;
+// 	} else {
+// 		historyList.innerHTML += `<li>${storDate}: ${storValue} szklanek</li>`;
+// 	}
 
-	totalGlassNumber += parseInt(storValue);
-	logDay--;
-}
+// 	totalGlassNumber += parseInt(storValue);
+// 	logDay--;
+// }
 
 let averageGlassNumber = Math.round(totalGlassNumber / 7);
 historyAverageGlassNumber.innerHTML = averageGlassNumber;
