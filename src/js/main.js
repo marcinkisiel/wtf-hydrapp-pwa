@@ -99,27 +99,31 @@ let year = yesterdayDate.getFullYear();
 let month = yesterdayDate.getMonth() + 1;
 let day = yesterdayDate.getDate();
 let storDate = year + '-' + month + '-' + day;
-console.log('storDate ' + storDate);
 
 let totalGlassNumber = 0;
 
-// for (let i = 0; i < 7; i++) {
-// 	let storDate = currentYear + '-' + currentMonth + '-' + logDay;
-// 	let storValue = localStorage.getItem(storDate);
-// 	if (storValue == null) {
-// 		storValue = 0;
-// 	}
-// 	if (storValue == 1) {
-// 		historyList.innerHTML += `<li>${storDate}: ${storValue} szklanka</li>`;
-// 	} else if (storValue > 1 && storValue < 5) {
-// 		historyList.innerHTML += `<li>${storDate}: ${storValue} szklanki</li>`;
-// 	} else {
-// 		historyList.innerHTML += `<li>${storDate}: ${storValue} szklanek</li>`;
-// 	}
+for (let i = 1; i < 8; i++) {
+	let yesterdayMiliseconds = rawDateMiliseconds - i * oneDayMiliseconds;
+	let yesterdayDate = new Date(yesterdayMiliseconds);
+	let year = yesterdayDate.getFullYear();
+	let month = yesterdayDate.getMonth() + 1;
+	let day = yesterdayDate.getDate();
+	let storDate = year + '-' + month + '-' + day;
 
-// 	totalGlassNumber += parseInt(storValue);
-// 	logDay--;
-// }
+	let storValue = localStorage.getItem(storDate);
+	if (storValue == null) {
+		storValue = 0;
+	}
+	if (storValue == 1) {
+		historyList.innerHTML += `<li>${storDate}: ${storValue} szklanka</li>`;
+	} else if (storValue > 1 && storValue < 5) {
+		historyList.innerHTML += `<li>${storDate}: ${storValue} szklanki</li>`;
+	} else {
+		historyList.innerHTML += `<li>${storDate}: ${storValue} szklanek</li>`;
+	}
+
+	totalGlassNumber += parseInt(storValue);
+}
 
 let averageGlassNumber = Math.round(totalGlassNumber / 7);
 historyAverageGlassNumber.innerHTML = averageGlassNumber;
