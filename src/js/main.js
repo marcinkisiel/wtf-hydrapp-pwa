@@ -108,7 +108,16 @@ for (let i = 1; i < 8; i++) {
 	let year = yesterdayDate.getFullYear();
 	let month = yesterdayDate.getMonth() + 1;
 	let day = yesterdayDate.getDate();
-	let storDate = year + '-' + month + '-' + day;
+
+	if (month < 10 && day < 10) {
+		storDate = year + '-0' + month + '-0' + day;
+	} else if (month < 10 && day >= 10) {
+		storDate = year + '-0' + month + '-' + day;
+	} else if (month > 10 && day < 10) {
+		storDate = year + '-' + month + '-0' + day;
+	} else {
+		storDate = year + '-' + month + '-' + day;
+	}
 
 	let storValue = localStorage.getItem(storDate);
 	if (storValue == null) {
