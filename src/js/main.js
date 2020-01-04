@@ -23,6 +23,7 @@ const buttonAdd = document.querySelector('.button_add-glass--js');
 const buttonSubtract = document.querySelector('.button_subtract-glass--js');
 const glassCounter = document.querySelector('.glass__counter--js');
 const glassBasicBlue = document.querySelector('.glass__basic-blue--js');
+const buttonHistory = document.querySelector('.button_show-history--js');
 const historyList = document.querySelector('.history__list--js');
 const historyAverageGlassNumber = document.querySelector('.history__glass-count--js');
 
@@ -56,6 +57,7 @@ setGlassBlueHeight(actualGlassNumber);
 
 buttonAdd.addEventListener('click', addGlass);
 buttonSubtract.addEventListener('click', subtractGlass);
+buttonHistory.addEventListener('click', showHistory);
 
 function addGlass() {
 	if (actualGlassNumber < 20) {
@@ -88,6 +90,10 @@ function subtractGlass() {
 			}
 		}
 	}
+}
+
+function showHistory() {
+	historyList.classList.toggle('history__list--hidden');
 }
 
 const rawDate = new Date();
