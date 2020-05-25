@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>HydrApp / WTF</title>
+		<meta name="description" content="Simple PWA app with basic JS elements" />
+
+		<!-- Title -->
+		<meta property="og:title" content="" />
+		<!-- OPTIONAL description. 2-4 sentences. -->
+		<meta property="og:description" content="" />
+		<!-- full url with http(s) ie. https://maciejkorsan.github.io/my-repo/ -->
+		<meta property="og:url" content="" />
+		<!-- full url to the image with http(s) ie. https://maciejkorsan.github.io/my-repo/assets/img/fb.png. Facebook suggests at least 1200 x 630. -->
+		<meta property="og:image" content="https://maciejkorsan.com/wtf-gulp-starter/assets/img/cover.png" />
+
+		<link rel="manifest" href="manifest.json" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<link rel="apple-touch-icon" sizes="192x192" href="assets/pwa/icons/icon-192x192.png" />
+
+		<link rel="icon" type="image/png" href="assets/pwa/icons/icon-192x192.png" />
+
+		<link rel="stylesheet" href="css/main.css" />
+		<script src="js/main.js" defer></script>
+	</head>
+	<body>
+		<main class="main">
+			<h1 class="main__header">HydrApp</h1>
+			<section class="glass">
+				<!-- <img class="glass__image" src="assets/img/basic-white-glass.png" alt="" srcset="" /> -->
+				<svg class="glass__basic-white" width="212" height="280" viewBox="0 0 212 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M208.748 2.8875C207.085 1.05 204.74 0 202.255 0H9.75548C7.28798 0 4.92548 1.05 3.26298 2.8875C1.61798 4.7075 0.795475 7.1575 1.04047 9.625L27.2905 272.125C27.7455 276.605 31.508 280 36.0055 280H176.005C180.503 280 184.265 276.605 184.703 272.125L210.953 9.625C211.215 7.1575 210.41 4.7075 208.748 2.8875Z"
+						fill="#ECEFF1"
+					/>
+				</svg>
+				<svg
+					class="glass__basic-blue glass__basic-blue--js"
+					width="162"
+					height="1"
+					viewBox="0 0 162 1"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M161.455 27.25L144.13 200.5H19.8805L0.455467 6.77499C22.3305 -0.22501 55.5805 -4.95001 82.0055 16.75C107.555 37.75 139.755 33.9 161.455 27.25Z"
+						fill="#2196F3"
+					/>
+				</svg>
+				<div class="glass__counter glass__counter--js">
+					<p>0</p>
+				</div>
+			</section>
+			<button class="button button__light button__add-glass button_add-glass--js">dodaj szklankę</button>
+			<button class="button button__subtract-glass button_subtract-glass--js">usuń szklankę</button>
+			<section class="history">
+				<h3 class="history__heading">Średnia ilość szklanek z ostatnich siedmiu dni: <span class="history__glass-count--js"></span></h3>
+				<button class="button button__light button__show-history button_show-history--js">pokaż historię</button>
+				<ul class="history__list history__list--hidden history__list--js"></ul>
+			</section>
+		</main>
+	</body>
+</html>
