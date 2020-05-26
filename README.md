@@ -2,7 +2,11 @@
 
 ## WTF: Co ten frontend
 
-# opis
+### live demo
+
+[HydrApp Live Demo](https://marcinkisiel.github.io/wtf-hydrapp-pwa/)
+
+### opis
 
 **HydrApp** to aplikacja PWA wykonana jako zadanie w ramach kursu **_[WTF: Co ten frontend](https://cotenfrontend.pl/)_** autorstwa **Maćka Korsana**.
 Jej celem jest zliczanie wypitych szklanek wody z założeniem dziennego limitu oraz zapamiętywanie ilości szklanek z wykorzystaniem mechanizmu **_localStorage_**.
@@ -26,6 +30,7 @@ Sass (SCSS), Webpack, Gulp
 ### projekt graficzny
 
 Maciej Korsan / [WTF: Co ten frontend](https://cotenfrontend.pl/)
+<br/>
 ![HydrApp design screen](design/hydrapp-figma-screen.png)
 
 ### zrzuty ekranu
@@ -38,5 +43,8 @@ Maciej Korsan / [WTF: Co ten frontend](https://cotenfrontend.pl/)
 
 **Marcin Kisiel**:
 [kisiel.marcin@gmail.com](mailto:kisiel.marcin@gmail.com)
+<br/>
 [LinkedIn](https://www.linkedin.com/in/marcin-kisiel/)
+<br/>
 [GitHub](https://github.com/marcinkisiel)
+<br/>
