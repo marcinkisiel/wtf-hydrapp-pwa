@@ -1,9 +1,35 @@
-# HydrApp / WTF: Co ten frontend
+# HydrApp
 
-`npm install -g gulp-cli`
+## WTF: Co ten frontend
 
-`npm install`
+### opis
 
-`gulp`
+**HydrApp** to aplikacja PWA wykonana jako zadanie w ramach kursu **_[WTF: Co ten frontend](https://cotenfrontend.pl/)_** autorstwa **Maćka Korsana**.
+Jej celem jest zliczanie wypitych szklanek wody z założeniem dziennego limitu oraz zapamiętywanie ilości szklanek z wykorzystaniem mechanizmu **_localStorage_**.
 
-To publish your page using github pages use `npm run deploy`
+### stan projektu
+
+działający / nieukończony
+
+### czas realizacji projektu
+
+grudzień 2019 - nadal
+
+### technologie
+
+JavaScript, HTML, CSS, PWA
+
+### użyte narzędzia
+
+Sass (SCSS), Webpack, Gulp
+
+### projekt graficzny
+
+Maciej Korsan / [WTF: Co ten frontend](https://cotenfrontend.pl/)
+
+#### kontakt
+
+Marcin Kisiel:
+[kisiel.marcin@gmail.com](mailto:kisiel.marcin@gmail.com)
+[LinkedIn](https://www.linkedin.com/in/marcin-kisiel/)
+[GitHub](https://github.com/marcinkisiel)
