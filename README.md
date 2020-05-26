@@ -29,7 +29,7 @@ Sass (SCSS), Webpack, Gulp
 
 ### projekt graficzny
 
-Maciej Korsan / [WTF: Co ten frontend](https://cotenfrontend.pl/)
+Maciej Korsan
 <br/>
 ![HydrApp design screen](design/hydrapp-figma-screen.png)
 
@@ -42,6 +42,7 @@ Maciej Korsan / [WTF: Co ten frontend](https://cotenfrontend.pl/)
 ### kontakt
 
 **Marcin Kisiel**:
+<br/>
 [kisiel.marcin@gmail.com](mailto:kisiel.marcin@gmail.com)
 <br/>
 [LinkedIn](https://www.linkedin.com/in/marcin-kisiel/)
