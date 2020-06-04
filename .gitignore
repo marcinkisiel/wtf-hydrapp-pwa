@@ -1,5 +1,6 @@
 dist
 node_modules
-
 .gitignore
-issues.txt
+
+design/hydrapp.fig
+package-lock.json
