@@ -2,5 +2,4 @@ dist
 node_modules
 .gitignore
 
-design/hydrapp.fig
 package-lock.json
